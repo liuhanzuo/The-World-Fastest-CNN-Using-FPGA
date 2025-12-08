@@ -3,7 +3,7 @@
 Dec 15 2017
 21:07:18
 D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
-D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/PE/pe.v,1765183747,verilog,,D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/pe_array.v,,pe,,,,,,,,
-D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/pe_array.v,1765183756,verilog,,D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/pe_array_with_bram.v,,pe_array,,,,,,,,
+D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/PE/pe.v,1765195282,verilog,,D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/pe_array.v,,pe,,,,,,,,
+D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/pe_array.v,1765195371,verilog,,D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/pe_array_with_bram.v,,pe_array,,,,,,,,
 D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/pe_array_with_bram.v,1765183797,verilog,,D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/tb_pe_array_os.v,,pe_array_with_bram,,,,,,,,
 D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/tb_pe_array_os.v,1765184711,verilog,,,,tb_pe_array_os,,,,,,,,

@@ -1,32 +1,49 @@
+// ================================================================
+// pe_array.v
+// 8Ã—8 PE array:
+//  - Row Directionï¼šTILE_C(Output Channels parallel)
+//  - Column Directionï¼šTILE_W(Output Width parallel)
+//
+// Each clock cycle:
+//   Input act_vec[0..TILE_W-1]   -> 8 activations
+//   Input wgt_vec[0..TILE_C-1]   -> 8 weights
+//   Corresponding PE(Co_idx, w_idx) does: psum[Co_idx,w_idx] += act_vec[w_idx]*wgt_vec[Co_idx]
+// ================================================================
 module pe_array #(
-    parameter N       = 8,
-    parameter DATA_W  = 8,
-    parameter WGT_W   = 8,
-    parameter PSUM_W  = 32
+    parameter TILE_C = 8,      
+    parameter TILE_W = 8,      
+    parameter DATA_W = 8,
+    parameter WGT_W  = 8,
+    parameter PSUM_W = 32
 )(
-    input  wire                    clk,
-    input  wire                    rst,
+    input  wire                             clk,
+    input  wire                             rst,
 
-    input  wire [N*N*DATA_W-1:0]   act_tile_flat, // 8¡Á8 activations = 512 bits
-    input  wire [WGT_W-1:0]        wgt_scalar,    // one kernel weight per cycle
+    // 8 activations for output width direction: act_vec[w0]
+    input  wire [TILE_W*DATA_W-1:0]        act_vec,
 
-    input  wire                    valid_in,
-    input  wire                    clear_psum,
+    // 8 weights for output channel direction: wgt_vec[Co]
+    input  wire [TILE_C*WGT_W-1:0]         wgt_vec,
 
-    output wire [N*N*PSUM_W-1:0]   psum_flat
+    input  wire                             valid_in,
+    input  wire                             clear_psum,
+
+    // 8x8 partial sums flattened: psum_flat[Co0,w0]
+    output wire [TILE_C*TILE_W*PSUM_W-1:0] psum_flat
 );
 
-    genvar i, j;
+    genvar c, w;
     generate
-        for (i = 0; i < N; i = i + 1) begin : ROW
-            for (j = 0; j < N; j = j + 1) begin : COL
-
-                localparam IDX = i*N + j;
+        for (c = 0; c < TILE_C; c = c + 1) begin : ROW
+            for (w = 0; w < TILE_W; w = w + 1) begin : COL
 
                 wire [DATA_W-1:0] act_ij =
-                    act_tile_flat[IDX*DATA_W +: DATA_W];
+                    act_vec[w*DATA_W +: DATA_W];
 
-                wire [PSUM_W-1:0] psum_o;
+                wire [WGT_W-1:0]  wgt_ij =
+                    wgt_vec[c*WGT_W +: WGT_W];
+
+                wire [PSUM_W-1:0] psum_ij;
 
                 pe #(
                     .DATA_W(DATA_W),
@@ -36,13 +53,14 @@ module pe_array #(
                     .clk      (clk),
                     .rst      (rst),
                     .act_in   (act_ij),
-                    .wgt_in   (wgt_scalar),
+                    .wgt_in   (wgt_ij),
                     .valid_in (valid_in),
                     .clear    (clear_psum),
-                    .psum_out (psum_o)
+                    .psum_out (psum_ij)
                 );
 
-                assign psum_flat[IDX*PSUM_W +: PSUM_W] = psum_o;
+                localparam integer IDX = c*TILE_W + w;
+                assign psum_flat[IDX*PSUM_W +: PSUM_W] = psum_ij;
             end
         end
     endgenerate
