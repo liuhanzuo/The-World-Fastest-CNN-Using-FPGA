@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../PE.srcs/sources_1/imports/PE/pe.v" \
+"../../../../PE.srcs/sources_1/new/pe_array.v" \
+"../../../../PE.srcs/sources_1/new/pe_array_with_bram.v" \
+"../../../../PE.srcs/sources_1/new/tb_pe_array_os.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
