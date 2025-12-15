@@ -1,1 +1,1 @@
--wto "982c81d1eeaa475585488f51ce157e42" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_pe_array_os_behav" "xil_defaultlib.tb_pe_array_os" "xil_defaultlib.glbl" -log "elaborate.log" 
+-wto "982c81d1eeaa475585488f51ce157e42" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "tb_pe_array_os_behav" "xil_defaultlib.tb_pe_array_os" "xil_defaultlib.glbl" -log "elaborate.log" 

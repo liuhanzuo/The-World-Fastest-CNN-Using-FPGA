@@ -1,0 +1,7 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+==== TB: CxW OS PE array test start ====
+==== Golden model computed. Start hardware run ====
+==== Checking results ====
+==== TEST PASSED! All 64 outputs match. ====
+$finish called at time : 155 ns : File "D:/TH/2026au/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/new/tb_pe_array_os.v" Line 185
