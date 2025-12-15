@@ -21,13 +21,22 @@ module pe #(
     output reg  [PSUM_W-1:0]      psum_out    
 );
 
-    (* use_dsp = "yes" *)
+    wire signed [DATA_W-1:0]      act_s = act_in;
+    wire signed [WGT_W-1:0]       wgt_s = wgt_in;
+    wire signed [DATA_W+WGT_W-1:0] mul  = act_s * wgt_s;
+
+    wire signed [PSUM_W-1:0] mul_ext =
+        {{(PSUM_W-(DATA_W+WGT_W)){mul[DATA_W+WGT_W-1]}}, mul};
+
     always @(posedge clk) begin
-        if (rst || clear) begin
+        if (rst) begin
+            psum_out <= {PSUM_W{1'b0}};
+        end else if (clear) begin
             psum_out <= {PSUM_W{1'b0}};
         end else if (valid_in) begin
-            psum_out <= psum_out + $signed(act_in) * $signed(wgt_in);
+            psum_out <= psum_out + mul_ext;
         end
+        // valid_in=0 and clear=0 -> hold value
     end
 
 endmodule

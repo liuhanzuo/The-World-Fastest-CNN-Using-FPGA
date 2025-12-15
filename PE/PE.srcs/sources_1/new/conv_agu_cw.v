@@ -55,6 +55,8 @@ module conv_agu_cw #(
     // --- Ping-pong selection ---
     output reg                      pingpong_sel,   // 0: BRAM0 read/1 write; 1: Vice versa
 
+    // --- mask for padding ---
+    output reg [TILE_W-1:0]        mask_w,         // Mask for valid output w positions, activation buffer needed
     // Optional: Layer done flag
     output reg                      done
 );
@@ -77,9 +79,9 @@ module conv_agu_cw #(
     // FSM States
     // ============================================================
     localparam S_IDLE   = 2'd0;
-    localparam S_CLEAR  = 2'd1;
+    localparam S_CLEAR  = 2'd1; // Initial clear only
     localparam S_MAC    = 2'd2;
-    localparam S_WRITE  = 2'd3;
+    localparam S_GAP    = 2'd3; // Wait state between tiles
 
     reg [1:0] state, next_state;
 
@@ -99,14 +101,15 @@ module conv_agu_cw #(
     reg [15:0] cnt_hk;
     reg [15:0] cnt_wk;
 
-    // Write-back stage: Write 8x8 row within TILE_C cycles
-    reg [15:0] cnt_co_write;  // 0..TILE_C-1
-    // assign out_row_idx = cnt_co_write[3:0];
+    // Gap counter
+    reg [3:0]  cnt_gap;
+    localparam GAP_CYCLES = 5; // Wait 5 cycles (N+1..N+5), start next at N+6
 
     // Integers for address calculation
     integer h_act, w_act;
     integer base_co;
     integer co_out;
+    integer i;
 
     // ------------------------------------------------------------
     // FSM State Transition
@@ -123,10 +126,6 @@ module conv_agu_cw #(
         (cnt_hk == K-1) &&
         (cnt_wk == K-1);
 
-    assign data_ready = (state == S_MAC) && mac_last_cycle;
-
-    wire write_last_cycle = (cnt_co_write == TILE_C-1);
-
     // Check if current tile is the last tile of the feature map
     wire last_tile =
         (cnt_h0  == H_OUT-1) &&
@@ -140,29 +139,29 @@ module conv_agu_cw #(
                 if (start)
                     next_state = S_CLEAR;
             end
-            // Clear psum for one cycle
+            // Clear psum for one cycle (Initial clear)
             S_CLEAR: begin
                 next_state = S_MAC;
             end
             // MAC stage: Ci x hk x wk
             S_MAC: begin
-                if (mac_last_cycle)
-                    next_state = S_WRITE;
-            end
-            // Write-back stage: TILE_C cycles, write one Co row per cycle
-            S_WRITE: begin
-                if (write_last_cycle) begin
+                if (mac_last_cycle) begin
                     if (last_tile)
                         next_state = S_IDLE;
                     else
-                        next_state = S_CLEAR;
+                        next_state = S_GAP;
                 end
+            end
+            // Gap stage: Wait for pipeline to drain/setup next
+            S_GAP: begin
+                if (cnt_gap == GAP_CYCLES)
+                    next_state = S_MAC;
             end
         endcase
     end
 
     // ============================================================
-    // Counter Update Logic
+    // Counter Update Logic (Main FSM)
     // ============================================================
     always @(posedge clk) begin
         if (rst) begin
@@ -172,7 +171,7 @@ module conv_agu_cw #(
             cnt_ci       <= 0;
             cnt_hk       <= 0;
             cnt_wk       <= 0;
-            cnt_co_write <= 0;
+            cnt_gap      <= 0;
             pingpong_sel <= 0;
             done         <= 0;
         end else begin
@@ -180,11 +179,8 @@ module conv_agu_cw #(
 
             case (state)
                 S_IDLE: begin
-                    // Wait for start; automatically enter CLEAR after start
                     if (start) begin
-                        // Toggle ping-pong at start of each layer
                         pingpong_sel <= ~pingpong_sel;
-                        // Reset outer loops
                         cnt_h0       <= 0;
                         base_c       <= 0;
                         base_w       <= 0;
@@ -192,11 +188,10 @@ module conv_agu_cw #(
                 end
 
                 S_CLEAR: begin
-                    // Prepare inner MAC loops
                     cnt_ci       <= 0;
                     cnt_hk       <= 0;
                     cnt_wk       <= 0;
-                    cnt_co_write <= 0;
+                    cnt_gap      <= 0;
                 end
 
                 S_MAC: begin
@@ -205,10 +200,13 @@ module conv_agu_cw #(
                         cnt_wk <= 0;
                         if (cnt_hk == K-1) begin
                             cnt_hk <= 0;
-                            if (cnt_ci == C_IN-1)
-                                cnt_ci <= 0;     // Will jump to WRITE
-                            else
+                            if (cnt_ci == C_IN-1) begin
+                                cnt_ci <= 0;
+                                // If last tile, done will be set in next cycle logic or here
+                                if (last_tile) done <= 1;
+                            end else begin
                                 cnt_ci <= cnt_ci + 1;
+                            end
                         end else begin
                             cnt_hk <= cnt_hk + 1;
                         end
@@ -217,30 +215,27 @@ module conv_agu_cw #(
                     end
                 end
 
-                S_WRITE: begin
-                    // Write back Co row
-                    if (cnt_co_write == TILE_C-1) begin
-                        cnt_co_write <= 0;
-
-                        // Prepare h0/base_c/base_w for next tile
+                S_GAP: begin
+                    if (cnt_gap == GAP_CYCLES) begin
+                        cnt_gap <= 0;
+                        // Update outer loops for next tile
                         if (base_w + TILE_W < W_OUT) begin
-                            base_w <= base_w + TILE_W;  // Next column tile
+                            base_w <= base_w + TILE_W;
                         end else begin
                             base_w <= 0;
                             if (base_c + TILE_C < C_OUT) begin
-                                base_c <= base_c + TILE_C; // Next output channel group
+                                base_c <= base_c + TILE_C;
                             end else begin
                                 base_c <= 0;
                                 if (cnt_h0 + 1 < H_OUT) begin
-                                    cnt_h0 <= cnt_h0 + 1;   // Next row h0
+                                    cnt_h0 <= cnt_h0 + 1;
                                 end else begin
-                                    cnt_h0 <= 0;
-                                    done   <= 1;            // Layer done
+                                    cnt_h0 <= 0; // Should not happen if last_tile check works
                                 end
                             end
                         end
                     end else begin
-                        cnt_co_write <= cnt_co_write + 1;
+                        cnt_gap <= cnt_gap + 1;
                     end
                 end
             endcase
@@ -248,55 +243,177 @@ module conv_agu_cw #(
     end
 
     // ============================================================
-    // Control Signals: clear_psum / valid_in / out_we
+    // Pipeline Control Signals
     // ============================================================
+    
+    // Delays:
+    // valid_in: 4 cycles (N -> N+4)
+    // data_ready: 8 cycles (N -> N+8)
+    // clear_psum: 9 cycles (N -> N+9)
+    
+    reg [3:0] valid_in_pipe;
+    reg [8:0] data_ready_pipe;
+    reg [9:0] clear_psum_pipe;
+    
+    // Mask pipeline (match valid_in delay = 3)
+    // reg [TILE_W-1:0] mask_pipe [0:2];
+    // reg [TILE_W-1:0] mask_next; // Combinational mask
+
     always @(posedge clk) begin
         if (rst) begin
-            clear_psum <= 0;
-            valid_in   <= 0;
-            out_we     <= 0;
+            valid_in_pipe   <= 0;
+            data_ready_pipe <= 0;
+            clear_psum_pipe <= 0;
+            valid_in        <= 0;
+            mask_w          <= 0;
+            // mask_pipe[0]    <= 0;
+            // mask_pipe[1]    <= 0;
+            // mask_pipe[2]    <= 0;
         end else begin
-            clear_psum <= (state == S_CLEAR);
-            valid_in   <= (state == S_MAC);
-            out_we     <= (state == S_WRITE);
+            // valid_in pipeline
+            valid_in_pipe <= {valid_in_pipe[3:0], (state == S_MAC)};
+            valid_in      <= valid_in_pipe[4];
+
+            // no need to wait, act buffer should dapai
+            // mask_pipe[0] <= mask_next;
+            // mask_pipe[1] <= mask_pipe[0];
+            // mask_pipe[2] <= mask_pipe[1];
+            // mask_w       <= mask_pipe[2];
+
+            // data_ready pipeline
+            // Input is pulse at end of MAC (Cycle N)
+            data_ready_pipe <= {data_ready_pipe[8:0], (state == S_MAC) && mac_last_cycle};
+            
+            // clear_psum pipeline
+            clear_psum_pipe <= {clear_psum_pipe[9:0], (state == S_MAC) && mac_last_cycle};
+        end
+    end
+    
+    assign data_ready = data_ready_pipe[8]; // Output at N+8
+    
+    // clear_psum is OR of initial clear and pipeline clear
+    assign clear_psum = (state == S_CLEAR) || clear_psum_pipe[9]; // Output at N+9
+
+    // ============================================================
+    // Write Back Logic (Independent FSM/Counter)
+    // ============================================================
+    
+    reg [15:0] w_base_c, w_base_w, w_cnt_h0;
+    reg        write_active;
+    reg [3:0]  cnt_write_row;
+    
+    // Latch parameters at end of MAC (Cycle N)
+    always @(posedge clk) begin
+        if (rst) begin
+            w_base_c <= 0;
+            w_base_w <= 0;
+            w_cnt_h0 <= 0;
+        end else if ((state == S_MAC) && mac_last_cycle) begin
+            w_base_c <= base_c;
+            w_base_w <= base_w;
+            w_cnt_h0 <= cnt_h0;
+        end
+    end
+    
+    // Write FSM
+    always @(posedge clk) begin
+        if (rst) begin
+            write_active   <= 0;
+            cnt_write_row  <= 0;
+            out_we         <= 0;
+            out_write_base <= 0;
+            out_row_idx    <= 0;
+        end else begin
+            // Trigger write on data_ready (N+7)
+            // Start writing at N+8
+            if (data_ready) begin
+                write_active  <= 1;
+                cnt_write_row <= 0;
+            end
+            
+            if (write_active) begin
+                out_we      <= 1;
+                out_row_idx <= cnt_write_row;
+                
+                // Calculate address
+                co_out = w_base_c + cnt_write_row;
+                out_write_base <=
+                    co_out * OUT_PLANE +
+                    w_cnt_h0 * W_OUT +
+                    w_base_w;
+                
+                if (cnt_write_row == TILE_C - 1) begin
+                    write_active <= 0;
+                    cnt_write_row <= 0;
+                end else begin
+                    cnt_write_row <= cnt_write_row + 1;
+                end
+            end else begin
+                out_we <= 0;
+            end
         end
     end
 
     // ============================================================
-    // Address Generation: Based on (h0, base_c, base_w, Ci, hk, wk, co_write)
+    // Address Generation (Read Side)
     // ============================================================
 
     // 1) ACT Buffer read base
-    //    I[Ci, h, w], continuous 8 w starting from base_w + wk
-    //    h = h0 + hk
     always @(posedge clk) begin
         if (rst) begin
             act_read_base <= 0;
         end else if (state == S_MAC) begin
-            // Row coordinate & Column start
             h_act = cnt_h0 + cnt_hk;
             w_act = base_w + cnt_wk;
 
             act_read_base <=
-                cnt_ci * ACT_PLANE +          // offset of Ci
-                h_act * W_IN    +             // offset of row
-                w_act;                        // offset of col (start, next 8 continuous)
+                cnt_ci * ACT_PLANE +
+                h_act * W_IN +
+                w_act;
+        end
+    end
+    
+    // Mask Combinational Logic (Registered in pipeline block)
+    always @(*) begin
+        if (state == S_MAC) begin
+            h_act = cnt_h0 + cnt_hk;
+            w_act = base_w + cnt_wk;
+            
+            if (h_act < 0 || h_act >= H_IN) begin
+                //mask_next = {TILE_W{1'b0}};
+                mask = {TILE_W{1'b0}};
+            end else if ( (w_act >= 0) && (w_act + TILE_W <= W_IN) ) begin
+                // All valid
+                // mask_next = {TILE_W{1'b1}};
+                mask = {TILE_W{1'b1}};
+            end else begin
+                for (i = 0; i < TILE_W; i = i + 1) begin
+                    if ((w_act + i) < 0 || (w_act + i) >= W_IN)
+                        // mask_next[i] = 1'b0;
+                        mask[i] = 1'b0;
+                    else
+                        // mask_next[i] = 1'b1;
+                        mask[i] = 1'b1;
+                end
+            end
+        end else begin
+            //mask_next = {TILE_W{1'b0}};
+            mask = {TILE_W{1'b0}};
         end
     end
 
     // 2) Weight Buffer read base
-    //    K[Ci, hk, wk, Co], Co starts from base_c, continuous 8
     always @(posedge clk) begin
         if (rst) begin
             wgt_read_base <= 0;
         end else if (state == S_MAC) begin
-            base_co = base_c;  // Start Co of this tile
+            base_co = base_c;
 
             wgt_read_base <=
-                cnt_ci * K_PLANE +              // offset of Ci
-                cnt_hk * (K * C_OUT) +          // offset of hk
-                cnt_wk * C_OUT       +          // offset of wk
-                base_co;                        // offset of Co start
+                cnt_ci * K_PLANE +
+                cnt_hk * (K * C_OUT) +
+                cnt_wk * C_OUT +
+                base_co;
         end
     end
 
@@ -304,19 +421,6 @@ module conv_agu_cw #(
     //    O[Co, h0, w0], write one Co row per cycle:
     //    Co = base_c + cnt_co_write
     //    w0 starts from base_w, continuous TILE_W
-    always @(posedge clk) begin
-        if (rst) begin
-            out_write_base <= 0;
-            out_row_idx    <= 0;
-        end else if (state == S_WRITE) begin
-            co_out = base_c + cnt_co_write;
-            out_row_idx <= cnt_co_write[3:0];
-
-            out_write_base <=
-                co_out * OUT_PLANE +          // offset of Co
-                cnt_h0 * W_OUT   +            // offset of h0 row
-                base_w;                        // w0 start, next TILE_W continuous
-        end
-    end
+    //    (Moved to Write Back Logic block)
 
 endmodule

@@ -35,6 +35,7 @@ module act_buffer_lat2 #(
     // --- AGU Read Interface ---
     input  wire                read_en,
     input  wire [ADDR_W-1:0]   read_base_addr, 
+    input  wire [TILE_W-1:0]   act_mask,
     output reg  [WORD_W-1:0]   act_vector,
 
     // --- Write Interface ---
@@ -70,6 +71,7 @@ module act_buffer_lat2 #(
     
     reg       word_changed_s1, word_changed_s2; // Delays for Load Enable
     reg [2:0] offset_s1, offset_s2, offset_s3;  // Delays for Mux Selection
+    reg [TILE_W-1:0] mask_s1, mask_s2, mask_s3; // Delays for Mask
 
     always @(posedge clk) begin
         if (read_en) begin
@@ -82,6 +84,11 @@ module act_buffer_lat2 #(
             offset_s1 <= req_offset;
             offset_s2 <= offset_s1;
             offset_s3 <= offset_s2;             // <--- This controls the final Mux
+
+            // Pipeline the Mask (Depth = 3)
+            mask_s1 <= act_mask;
+            mask_s2 <= mask_s1;
+            mask_s3 <= mask_s2;
         end
     end
 
@@ -150,18 +157,28 @@ module act_buffer_lat2 #(
     // 5. Output Mux (Combinational)
     // ============================================================
     // Uses offset_s3 because the data in prev/curr corresponds to the request 3 cycles ago.
+    reg [WORD_W-1:0] act_vector_mux;
+    integer i;
+
     always @(*) begin
         case (offset_s3) 
-            3'd0: act_vector = curr_word; 
-            3'd1: act_vector = {prev_word[63:8],   curr_word[7:0]};
-            3'd2: act_vector = {prev_word[63:16],  curr_word[15:0]};
-            3'd3: act_vector = {prev_word[63:24],  curr_word[23:0]};
-            3'd4: act_vector = {prev_word[63:32],  curr_word[31:0]};
-            3'd5: act_vector = {prev_word[63:40],  curr_word[39:0]};
-            3'd6: act_vector = {prev_word[63:48],  curr_word[47:0]};
-            3'd7: act_vector = {prev_word[63:56],  curr_word[55:0]};
-            default: act_vector = prev_word;
+            3'd0: act_vector_mux = curr_word; 
+            3'd1: act_vector_mux = {prev_word[63:8],   curr_word[7:0]};
+            3'd2: act_vector_mux = {prev_word[63:16],  curr_word[15:0]};
+            3'd3: act_vector_mux = {prev_word[63:24],  curr_word[23:0]};
+            3'd4: act_vector_mux = {prev_word[63:32],  curr_word[31:0]};
+            3'd5: act_vector_mux = {prev_word[63:40],  curr_word[39:0]};
+            3'd6: act_vector_mux = {prev_word[63:48],  curr_word[47:0]};
+            3'd7: act_vector_mux = {prev_word[63:56],  curr_word[55:0]};
+            default: act_vector_mux = prev_word;
         endcase
+
+        for (i = 0; i < TILE_W; i = i + 1) begin
+            if (mask_s3[i]) 
+                act_vector[i*DATA_W +: DATA_W] = {DATA_W{1'b0}};
+            else 
+                act_vector[i*DATA_W +: DATA_W] = act_vector_mux[i*DATA_W +: DATA_W];
+        end
     end
 
 endmodule
