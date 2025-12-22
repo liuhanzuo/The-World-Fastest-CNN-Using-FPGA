@@ -1,0 +1,105 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+Loading activation file: conv1_for_tb.mem
+Loading weight file: conv1_bin_for_tb.mem
+Loading expected output file: conv1_output_for_tb.mem
+Memory load done.
+Memory load done at time 0
+MEM_ACT: total=1024 nonzero=115 x_count=0 first_nonzero=296
+MEM_WGT: total=800 nonzero=785 x_count=0 first_nonzero=0
+MEM_EXP: total=32768 nonzero=9124 x_count=0 first_nonzero=230
+MEM_ACT[0..15]:
+  [0] = 0 (0x0)
+  [1] = 0 (0x0)
+  [2] = 0 (0x0)
+  [3] = 0 (0x0)
+  [4] = 0 (0x0)
+  [5] = 0 (0x0)
+  [6] = 0 (0x0)
+  [7] = 0 (0x0)
+  [8] = 0 (0x0)
+  [9] = 0 (0x0)
+  [10] = 0 (0x0)
+  [11] = 0 (0x0)
+  [12] = 0 (0x0)
+  [13] = 0 (0x0)
+  [14] = 0 (0x0)
+  [15] = 0 (0x0)
+MEM_WGT[0..15]:
+  [0] = 9 (0x9)
+  [1] = 7 (0x7)
+  [2] = -21 (0xeb)
+  [3] = -13 (0xf3)
+  [4] = 6 (0x6)
+  [5] = 16 (0x10)
+  [6] = -6 (0xfa)
+  [7] = -5 (0xfb)
+  [8] = -27 (0xe5)
+  [9] = -15 (0xf1)
+  [10] = 12 (0xc)
+  [11] = 3 (0x3)
+  [12] = -32 (0xe0)
+  [13] = -35 (0xdd)
+  [14] = -33 (0xdf)
+  [15] = 18 (0x12)
+[TB] posedge at 5000 rst=1 start=0 done=x
+Start AGU
+[TB] posedge at 10005000 rst=0 start=0 done=0
+[TB] posedge at 20005000 rst=0 start=0 done=0
+[TB] posedge at 30005000 rst=0 start=0 done=0
+[CMP] t=35225000 addr=230 got=0x7e exp=0x2 out_row=0 out_write_base=224 lane=6
+[CMP] t=35225000 addr=231 got=0x7f exp=0x9 out_row=0 out_write_base=224 lane=7
+[CMP] t=35235000 addr=1254 got=0x7f exp=0xff out_row=1 out_write_base=1248 lane=6
+[CMP] t=35235000 addr=1255 got=0x7f exp=0xfe out_row=1 out_write_base=1248 lane=7
+[CMP] t=35245000 addr=2278 got=0x7f exp=0x3 out_row=2 out_write_base=2272 lane=6
+[CMP] t=35245000 addr=2279 got=0x7f exp=0xa out_row=2 out_write_base=2272 lane=7
+[CMP] t=35255000 addr=3302 got=0x80 exp=0xfd out_row=3 out_write_base=3296 lane=6
+[CMP] t=35255000 addr=3303 got=0x80 exp=0xf7 out_row=3 out_write_base=3296 lane=7
+[CMP] t=35265000 addr=4326 got=0x7f exp=0xfb out_row=4 out_write_base=4320 lane=6
+[CMP] t=35265000 addr=4327 got=0x7f exp=0xf4 out_row=4 out_write_base=4320 lane=7
+[CMP] t=35275000 addr=5350 got=0x7f exp=0xfc out_row=5 out_write_base=5344 lane=6
+[CMP] t=35275000 addr=5351 got=0x7f exp=0xf5 out_row=5 out_write_base=5344 lane=7
+[CMP] t=35285000 addr=6374 got=0x7f exp=0x0 out_row=6 out_write_base=6368 lane=6
+[CMP] t=35285000 addr=6375 got=0x7f exp=0x4 out_row=6 out_write_base=6368 lane=7
+[CMP] t=35295000 addr=7398 got=0x80 exp=0xff out_row=7 out_write_base=7392 lane=6
+[CMP] t=35295000 addr=7399 got=0x80 exp=0xfb out_row=7 out_write_base=7392 lane=7
+[CMP] t=35535000 addr=232 got=0x7f exp=0xe out_row=0 out_write_base=232 lane=0
+[CMP] t=35535000 addr=233 got=0x7f exp=0x11 out_row=0 out_write_base=232 lane=1
+[CMP] t=35535000 addr=234 got=0x7f exp=0x12 out_row=0 out_write_base=232 lane=2
+[CMP] t=35535000 addr=235 got=0x7f exp=0xe out_row=0 out_write_base=232 lane=3
+[CMP] t=35535000 addr=236 got=0x7f exp=0x9 out_row=0 out_write_base=232 lane=4
+[CMP] t=35535000 addr=237 got=0x7f exp=0x4 out_row=0 out_write_base=232 lane=5
+[CMP] t=35535000 addr=238 got=0x7f exp=0x2 out_row=0 out_write_base=232 lane=6
+[CMP] t=35535000 addr=239 got=0x80 exp=0x0 out_row=0 out_write_base=232 lane=7
+[CMP] t=35545000 addr=1256 got=0x7f exp=0xfe out_row=1 out_write_base=1256 lane=0
+[CMP] t=35545000 addr=1257 got=0x7f exp=0x1 out_row=1 out_write_base=1256 lane=1
+[CMP] t=35545000 addr=1258 got=0x7f exp=0x0 out_row=1 out_write_base=1256 lane=2
+[CMP] t=35545000 addr=1259 got=0x7f exp=0xff out_row=1 out_write_base=1256 lane=3
+[CMP] t=35545000 addr=1260 got=0x8c exp=0xff out_row=1 out_write_base=1256 lane=4
+[CMP] t=35545000 addr=1261 got=0x80 exp=0xfe out_row=1 out_write_base=1256 lane=5
+[CMP] t=35545000 addr=1262 got=0xa0 exp=0xff out_row=1 out_write_base=1256 lane=6
+[CMP] t=35545000 addr=1263 got=0xdc exp=0xff out_row=1 out_write_base=1256 lane=7
+[CMP] t=35555000 addr=2280 got=0x7f exp=0xf out_row=2 out_write_base=2280 lane=0
+[CMP] t=35555000 addr=2281 got=0x7f exp=0xd out_row=2 out_write_base=2280 lane=1
+[CMP] t=35555000 addr=2282 got=0x80 exp=0x1 out_row=2 out_write_base=2280 lane=2
+[CMP] t=35555000 addr=2283 got=0x80 exp=0xf7 out_row=2 out_write_base=2280 lane=3
+[CMP] t=35555000 addr=2284 got=0x80 exp=0xf5 out_row=2 out_write_base=2280 lane=4
+[CMP] t=35555000 addr=2285 got=0x80 exp=0xf6 out_row=2 out_write_base=2280 lane=5
+[CMP] t=35555000 addr=2286 got=0x80 exp=0xfb out_row=2 out_write_base=2280 lane=6
+[CMP] t=35555000 addr=2287 got=0xee exp=0xfd out_row=2 out_write_base=2280 lane=7
+[TB] posedge at 40005000 rst=0 start=0 done=0
+[TB] posedge at 50005000 rst=0 start=0 done=0
+[TB] posedge at 60005000 rst=0 start=0 done=0
+[TB] posedge at 70005000 rst=0 start=0 done=0
+[TB] posedge at 80005000 rst=0 start=0 done=0
+[TB] posedge at 90005000 rst=0 start=0 done=0
+[TB] posedge at 100005000 rst=0 start=0 done=0
+[TB] posedge at 110005000 rst=0 start=0 done=0
+[TB] posedge at 120005000 rst=0 start=0 done=0
+[TB] posedge at 130005000 rst=0 start=0 done=0
+[TB] posedge at 140005000 rst=0 start=0 done=0
+[TB] posedge at 150005000 rst=0 start=0 done=0
+AGU done at time 158795000
+[CMP] total_bytes=32768 mismatches=9575 oob=0 got_nonzero=9353 exp_nonzero=9124
+Simulation finished
+$finish called at time : 158995 ns : File "D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/new/tb_top_sim.v" Line 320
