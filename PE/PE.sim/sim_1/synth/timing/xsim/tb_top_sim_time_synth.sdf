@@ -1,0 +1,10 @@
+(DELAYFILE 
+(SDFVERSION "3.0" )
+(DESIGN "tb_pe_array_os")
+(DATE "Mon Dec 22 21:54:44 2025")
+(VENDOR "XILINX")
+(PROGRAM "Vivado")
+(VERSION "2017.4")
+(DIVIDER /)
+(TIMESCALE 1ps)
+)

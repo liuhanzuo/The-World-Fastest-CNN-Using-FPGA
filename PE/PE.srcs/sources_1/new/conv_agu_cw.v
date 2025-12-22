@@ -49,7 +49,7 @@ module conv_agu_cw #(
     output wire                     data_ready,     // Pulse to latch psums
 
     // --- To PE Array ---
-    output reg                      clear_psum,     // Clear 64 psums
+    output wire                      clear_psum,     // Clear 64 psums
     output reg                      valid_in,       // MAC valid cycle
 
     // --- Ping-pong selection ---
@@ -63,8 +63,11 @@ module conv_agu_cw #(
     // ============================================================
     // Derived Parameters
     // ============================================================
-    localparam integer H_OUT = H_IN - K + 1;
-    localparam integer W_OUT = W_IN - K + 1;
+    // This project’s Python reference (data/structure/net.py) uses SAME padding for conv layers.
+    // For odd K, SAME padding is PAD = K/2 (e.g. K=5 -> PAD=2), yielding H_OUT=H_IN and W_OUT=W_IN.
+    localparam integer PAD   = K / 2;
+    localparam integer H_OUT = H_IN;
+    localparam integer W_OUT = W_IN;
 
     // Use constants to reduce multiplication
     localparam integer ACT_PLANE  = H_IN * W_IN;    // Elements per Ci
@@ -247,18 +250,18 @@ module conv_agu_cw #(
     // ============================================================
     
     // Delays:
-    // valid_in: 4 cycles (N -> N+4)
-    // data_ready: 8 cycles (N -> N+8)
+    // valid_in:   4 cycles (N -> N+4)
+    // data_ready: 9 cycles (N -> N+9)
     // clear_psum: 9 cycles (N -> N+9)
-    
-    reg [3:0] valid_in_pipe;
-    reg [8:0] data_ready_pipe;
+
+    reg [4:0] valid_in_pipe;
+    reg [9:0] data_ready_pipe;
     reg [9:0] clear_psum_pipe;
     
     // Mask pipeline (match valid_in delay = 3)
     // reg [TILE_W-1:0] mask_pipe [0:2];
     // reg [TILE_W-1:0] mask_next; // Combinational mask
-
+    reg [TILE_W-1:0] mask; // Combinational mask
     always @(posedge clk) begin
         if (rst) begin
             valid_in_pipe   <= 0;
@@ -280,12 +283,14 @@ module conv_agu_cw #(
             // mask_pipe[2] <= mask_pipe[1];
             // mask_w       <= mask_pipe[2];
 
-            // data_ready pipeline
-            // Input is pulse at end of MAC (Cycle N)
-            data_ready_pipe <= {data_ready_pipe[8:0], (state == S_MAC) && mac_last_cycle};
-            
-            // clear_psum pipeline
-            clear_psum_pipe <= {clear_psum_pipe[9:0], (state == S_MAC) && mac_last_cycle};
+            // data_ready pipeline (pulse at end of MAC)
+            data_ready_pipe <= {data_ready_pipe[7:0], (state == S_MAC) && mac_last_cycle};
+
+            // clear_psum pipeline (pulse at end of MAC)
+            clear_psum_pipe <= {clear_psum_pipe[8:0], (state == S_MAC) && mac_last_cycle};
+
+            // register mask for external use (act buffer)
+            mask_w <= mask;
         end
     end
     
@@ -363,8 +368,9 @@ module conv_agu_cw #(
         if (rst) begin
             act_read_base <= 0;
         end else if (state == S_MAC) begin
-            h_act = cnt_h0 + cnt_hk;
-            w_act = base_w + cnt_wk;
+            // SAME padding: input index = output index + kernel index - PAD
+            h_act = cnt_h0 + cnt_hk - PAD;
+            w_act = base_w + cnt_wk - PAD;
 
             act_read_base <=
                 cnt_ci * ACT_PLANE +
@@ -376,28 +382,20 @@ module conv_agu_cw #(
     // Mask Combinational Logic (Registered in pipeline block)
     always @(*) begin
         if (state == S_MAC) begin
-            h_act = cnt_h0 + cnt_hk;
-            w_act = base_w + cnt_wk;
+            h_act = cnt_h0 + cnt_hk - PAD;
+            w_act = base_w + cnt_wk - PAD;
             
             if (h_act < 0 || h_act >= H_IN) begin
-                //mask_next = {TILE_W{1'b0}};
                 mask = {TILE_W{1'b0}};
-            end else if ( (w_act >= 0) && (w_act + TILE_W <= W_IN) ) begin
-                // All valid
-                // mask_next = {TILE_W{1'b1}};
-                mask = {TILE_W{1'b1}};
             end else begin
                 for (i = 0; i < TILE_W; i = i + 1) begin
                     if ((w_act + i) < 0 || (w_act + i) >= W_IN)
-                        // mask_next[i] = 1'b0;
                         mask[i] = 1'b0;
                     else
-                        // mask_next[i] = 1'b1;
                         mask[i] = 1'b1;
                 end
             end
         end else begin
-            //mask_next = {TILE_W{1'b0}};
             mask = {TILE_W{1'b0}};
         end
     end

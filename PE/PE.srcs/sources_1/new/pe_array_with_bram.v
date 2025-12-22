@@ -19,10 +19,10 @@ module pe_array_with_bram #(
     input  wire                             clk,
     input  wire                             rst,
 
-    // ю╢вт Activation Buffer / BRAM ╣д 8 ╦Ж activation
+    // О©╫О©╫О©╫О©╫ Activation Buffer / BRAM О©╫О©╫ 8 О©╫О©╫ activation
     input  wire [TILE_W*DATA_W-1:0]        act_vec,
 
-    // ю╢вт Weight Buffer / BRAM ╣д 8 ╦Ж weight
+    // О©╫О©╫О©╫О©╫ Weight Buffer / BRAM О©╫О©╫ 8 О©╫О©╫ weight
     input  wire [TILE_C*WGT_W-1:0]         wgt_vec,
 
     input  wire                             valid_in,
@@ -59,10 +59,10 @@ module pe_array_with_bram #(
     ) u_array (
         .clk       (clk),
         .rst       (rst),
-        .act_vec   (act_vec),
-        .wgt_vec   (wgt_vec),
-        .valid_in  (valid_in),
-        .clear_psum(clear_psum),
+        .act_vec   (act_vec_r),
+        .wgt_vec   (wgt_vec_r),
+        .valid_in  (valid_in_r),
+        .clear_psum(clear_psum_r),
         .psum_flat (psum_flat)
     );
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z035ffg676-2" LaunchTime="1765785814">
+<GenRun Id="synth_1" LaunchPart="xc7z035ffg676-2" LaunchTime="1766406587">
   <File Type="PA-TCL" Name="tb_pe_array_os.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="tb_pe_array_os_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="tb_pe_array_os_reports.tcl"/>
@@ -20,94 +20,130 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/pe_array.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/pe_array.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/pe_array.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/pe_array_with_bram.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/pe_array_with_bram.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/pe_array_with_bram.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/tb_pe_array_os.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/tb_pe_array_os.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_pe_array_os.v"/>
+        <Attr Name="ImportTime" Val="1765195937"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_act/blk_mem_gen_act.xci">
+    <File Path="$PSRCDIR/sources_1/imports/new/act_buf.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/act_buf.v"/>
+        <Attr Name="ImportTime" Val="1765806661"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/act_buf.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/tb_bram.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_bram.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/tb_bram.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/bram.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/bram.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/bram.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/dpu_top.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dpu_top.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/dpu_top.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/wgt_buf.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/wgt_buf.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/wgt_buf.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/conv_agu_cw.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/conv_agu_cw.v"/>
+        <Attr Name="ImportTime" Val="1765806627"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/conv_agu_cw.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/tb_conv_agu_cw.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_conv_agu_cw.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/tb_conv_agu_cw.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/pe_drainer.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/pe_drainer.v"/>
+        <Attr Name="ImportTime" Val="1765798442"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../test.coe">
+    <File Path="$PSRCDIR/sources_1/imports/new/top.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/top.v"/>
+        <Attr Name="ImportTime" Val="1765804738"/>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/tb_top_sim.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_top_sim.v"/>
+        <Attr Name="ImportTime" Val="1766404437"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>

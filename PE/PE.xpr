@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="35" Path="D:/TH/2026au/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.xpr">
+<Project Version="7" Minor="35" Path="D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="982c81d1eeaa475585488f51ce157e42"/>
@@ -31,20 +31,20 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="25"/>
+    <Option Name="WTXSimLaunchSim" Val="55"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="19"/>
-    <Option Name="WTModelSimExportSim" Val="19"/>
-    <Option Name="WTQuestaExportSim" Val="19"/>
-    <Option Name="WTIesExportSim" Val="19"/>
-    <Option Name="WTVcsExportSim" Val="19"/>
-    <Option Name="WTRivieraExportSim" Val="19"/>
-    <Option Name="WTActivehdlExportSim" Val="19"/>
+    <Option Name="WTXSimExportSim" Val="20"/>
+    <Option Name="WTModelSimExportSim" Val="20"/>
+    <Option Name="WTQuestaExportSim" Val="20"/>
+    <Option Name="WTIesExportSim" Val="20"/>
+    <Option Name="WTVcsExportSim" Val="20"/>
+    <Option Name="WTRivieraExportSim" Val="20"/>
+    <Option Name="WTActivehdlExportSim" Val="20"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -64,100 +64,128 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/pe_array.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/pe_array.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/pe_array.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/pe_array_with_bram.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/pe_array_with_bram.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/pe_array_with_bram.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/tb_pe_array_os.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/tb_pe_array_os.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_pe_array_os.v"/>
+          <Attr Name="ImportTime" Val="1765195937"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_act/blk_mem_gen_act.xci">
+      <File Path="$PSRCDIR/sources_1/imports/new/act_buf.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/act_buf.v"/>
+          <Attr Name="ImportTime" Val="1765806661"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/act_buf.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/tb_bram.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_bram.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/tb_bram.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/bram.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/bram.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/bram.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/dpu_top.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dpu_top.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/dpu_top.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/wgt_buf.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/wgt_buf.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/wgt_buf.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/conv_agu_cw.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/conv_agu_cw.v"/>
+          <Attr Name="ImportTime" Val="1765806627"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/conv_agu_cw.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/tb_conv_agu_cw.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_conv_agu_cw.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/tb_conv_agu_cw.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/pe_drainer.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/pe_drainer.v"/>
+          <Attr Name="ImportTime" Val="1765798442"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../test.coe">
+      <File Path="$PSRCDIR/sources_1/imports/new/top.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/top.v"/>
+          <Attr Name="ImportTime" Val="1765804738"/>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/pe_drainer.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/tb_top_sim.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tb_top_sim.v"/>
+          <Attr Name="ImportTime" Val="1766407484"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -176,12 +204,37 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/imports/The-World-Fastest-CNN-Using-FPGA/conv1_for_tb.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../conv1_for_tb.mem"/>
+          <Attr Name="ImportTime" Val="1766406742"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/imports/The-World-Fastest-CNN-Using-FPGA/conv1_bin_for_tb.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../conv1_bin_for_tb.mem"/>
+          <Attr Name="ImportTime" Val="1766406740"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/imports/The-World-Fastest-CNN-Using-FPGA/conv1_output_for_tb.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../conv1_output_for_tb.mem"/>
+          <Attr Name="ImportTime" Val="1766409024"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="tb_pe_array_os"/>
+        <Option Name="TopModule" Val="tb_top_sim"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SimMode" Val="post-synthesis"/>
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
@@ -213,6 +266,20 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="blk_mem_gen_act" Type="BlockSrcs" RelSrcDir="$PSRCDIR/blk_mem_gen_act">
+      <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_act/blk_mem_gen_act.xci">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="blk_mem_gen_act"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -235,7 +302,9 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z035ffg676-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -260,9 +329,22 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="blk_mem_gen_act_synth_1" Type="Ft3:Synth" SrcSet="blk_mem_gen_act" Part="xc7z035ffg676-2" ConstrsSet="blk_mem_gen_act" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/blk_mem_gen_act_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -295,6 +377,24 @@
     <Run Id="xbip_dsp48_macro_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="xbip_dsp48_macro_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="xbip_dsp48_macro_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="blk_mem_gen_act_impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="blk_mem_gen_act" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="blk_mem_gen_act_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

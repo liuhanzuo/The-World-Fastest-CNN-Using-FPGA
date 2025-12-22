@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/TH/2026au/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.runs/synth_1'
+HD_PWD='D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
