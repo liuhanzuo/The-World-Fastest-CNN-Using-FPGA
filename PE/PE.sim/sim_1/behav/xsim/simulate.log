@@ -1,0 +1,67 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+Loading activation file: conv1_for_tb.mem
+Loading weight file: conv1_bin_for_tb.mem
+Loading expected output file: conv1_output_for_tb.mem
+Memory load done at t=0
+MEM_ACT[0]=0x0 MEM_WGT[0]=0x9 MEM_EXP[0]=0x0
+[TB] t=5000 cyc=0 rst=1 start=0 done=x
+Start AGU
+[TB] t=10005000 cyc=1000 rst=0 start=0 done=0
+[TB] t=20005000 cyc=2000 rst=0 start=0 done=0
+[TB] t=30005000 cyc=3000 rst=0 start=0 done=0
+[CMP] t=35225000 addr=230 got=7e exp=2 row=0 base=224 lane=6
+[CMP] t=35225000 addr=231 got=7f exp=9 row=0 base=224 lane=7
+[CMP] t=35235000 addr=1254 got=7f exp=ff row=1 base=1248 lane=6
+[CMP] t=35235000 addr=1255 got=7f exp=fe row=1 base=1248 lane=7
+[CMP] t=35245000 addr=2278 got=7f exp=3 row=2 base=2272 lane=6
+[CMP] t=35245000 addr=2279 got=f4 exp=a row=2 base=2272 lane=7
+[CMP] t=35255000 addr=3302 got=80 exp=fd row=3 base=3296 lane=6
+[CMP] t=35255000 addr=3303 got=80 exp=f7 row=3 base=3296 lane=7
+[CMP] t=35265000 addr=4326 got=7f exp=fb row=4 base=4320 lane=6
+[CMP] t=35265000 addr=4327 got=7f exp=f4 row=4 base=4320 lane=7
+[CMP] t=35275000 addr=5350 got=7f exp=fc row=5 base=5344 lane=6
+[CMP] t=35275000 addr=5351 got=7f exp=f5 row=5 base=5344 lane=7
+[CMP] t=35285000 addr=6374 got=7f exp=0 row=6 base=6368 lane=6
+[CMP] t=35285000 addr=6375 got=7f exp=4 row=6 base=6368 lane=7
+[CMP] t=35295000 addr=7398 got=80 exp=ff row=7 base=7392 lane=6
+[CMP] t=35295000 addr=7399 got=80 exp=fb row=7 base=7392 lane=7
+[CMP] t=35535000 addr=232 got=7f exp=e row=0 base=232 lane=0
+[CMP] t=35535000 addr=233 got=7f exp=11 row=0 base=232 lane=1
+[CMP] t=35535000 addr=234 got=7f exp=12 row=0 base=232 lane=2
+[CMP] t=35535000 addr=235 got=7f exp=e row=0 base=232 lane=3
+[CMP] t=35535000 addr=236 got=7f exp=9 row=0 base=232 lane=4
+[CMP] t=35535000 addr=237 got=80 exp=4 row=0 base=232 lane=5
+[CMP] t=35535000 addr=238 got=ee exp=2 row=0 base=232 lane=6
+[CMP] t=35535000 addr=239 got=ca exp=0 row=0 base=232 lane=7
+[CMP] t=35545000 addr=1256 got=7f exp=fe row=1 base=1256 lane=0
+[CMP] t=35545000 addr=1257 got=7f exp=1 row=1 base=1256 lane=1
+[CMP] t=35545000 addr=1258 got=7f exp=0 row=1 base=1256 lane=2
+[CMP] t=35545000 addr=1259 got=7f exp=ff row=1 base=1256 lane=3
+[CMP] t=35545000 addr=1260 got=7f exp=ff row=1 base=1256 lane=4
+[CMP] t=35545000 addr=1261 got=7f exp=fe row=1 base=1256 lane=5
+[CMP] t=35545000 addr=1262 got=7f exp=ff row=1 base=1256 lane=6
+[CMP] t=35545000 addr=1263 got=7f exp=ff row=1 base=1256 lane=7
+[CMP] t=35555000 addr=2280 got=80 exp=f row=2 base=2280 lane=0
+[CMP] t=35555000 addr=2281 got=5f exp=d row=2 base=2280 lane=1
+[CMP] t=35555000 addr=2282 got=7f exp=1 row=2 base=2280 lane=2
+[CMP] t=35555000 addr=2283 got=7f exp=f7 row=2 base=2280 lane=3
+[CMP] t=35555000 addr=2284 got=7f exp=f5 row=2 base=2280 lane=4
+[CMP] t=35555000 addr=2285 got=7f exp=f6 row=2 base=2280 lane=5
+[CMP] t=35555000 addr=2286 got=7f exp=fb row=2 base=2280 lane=6
+[CMP] t=35555000 addr=2287 got=5a exp=fd row=2 base=2280 lane=7
+[TB] t=40005000 cyc=4000 rst=0 start=0 done=0
+[TB] t=50005000 cyc=5000 rst=0 start=0 done=0
+[TB] t=60005000 cyc=6000 rst=0 start=0 done=0
+[TB] t=70005000 cyc=7000 rst=0 start=0 done=0
+[TB] t=80005000 cyc=8000 rst=0 start=0 done=0
+[TB] t=90005000 cyc=9000 rst=0 start=0 done=0
+[TB] t=100005000 cyc=10000 rst=0 start=0 done=0
+[TB] t=110005000 cyc=11000 rst=0 start=0 done=0
+[TB] t=120005000 cyc=12000 rst=0 start=0 done=0
+[TB] t=130005000 cyc=13000 rst=0 start=0 done=0
+[TB] t=140005000 cyc=14000 rst=0 start=0 done=0
+[TB] t=150005000 cyc=15000 rst=0 start=0 done=0
+DONE at t=158795000
+[CMP SUMMARY] total=32768 mismatch=9574
+$finish called at time : 159095 ns : File "D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/new/tb_top_sim.v" Line 289
