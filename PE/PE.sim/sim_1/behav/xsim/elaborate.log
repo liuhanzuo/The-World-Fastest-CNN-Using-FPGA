@@ -6,6 +6,7 @@ Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/new/conv_agu_cw.v" Line 13. Module conv_agu_cw(H_IN=32,W_IN=32,C_IN=1,C_OUT=32,K=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/new/pe_array_with_bram.v" Line 12. Module pe_array_with_bram doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/new/pe_array.v" Line 12. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/PE/pe.v" Line 8. Module pe doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/FPGA/The-World-Fastest-CNN-Using-FPGA/PE/PE.srcs/sources_1/imports/PE/pe.v" Line 8. Module pe doesn't have a timescale but at least one module in design has a timescale.
@@ -76,6 +77,7 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.conv_agu_cw(H_IN=32,W_IN=32,C_IN...
 Compiling module xil_defaultlib.pe
 Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_with_bram
 Compiling module xil_defaultlib.pe_drainer_default
 Compiling module xil_defaultlib.tb_top_sim
 Compiling module xil_defaultlib.glbl
