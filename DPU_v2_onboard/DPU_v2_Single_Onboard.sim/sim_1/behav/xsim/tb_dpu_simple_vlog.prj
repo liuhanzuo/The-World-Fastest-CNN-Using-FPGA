@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../DPU_v2/src/act_buffer.v" \
+"../../../../../DPU_v2/src/agu.v" \
+"../../../../../DPU_v2/tb/debug_pe_mac.v" \
+"../../../../../DPU_v2/src/dpu_top.v" \
+"../../../../../DPU_v2/src/drainer.v" \
+"../../../../../DPU_v2/src/pe_array.v" \
+"../../../../../DPU_v2/src/wgt_buffer.v" \
+"../../../../../DPU_v2/tb/tb_dpu_simple.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

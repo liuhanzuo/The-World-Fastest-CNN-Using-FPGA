@@ -1,0 +1,716 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+========================================
+Loading test data (real Conv1, SHIFT=8, ReLU enabled)...
+  act_mem[0] = 0000000000000000
+  wgt_mem[0] = 0fe9fe2f15041009
+  exp_mem[0] = 0000000000000000
+========================================
+Loading activations into BRAM...
+Loading weights into BRAM...
+========================================
+Starting DPU computation at time              2415000...
+DEBUG AGU READ[         0]: cycle=       239 act_addr=0x0000 shift= -2 mask=00000000 wgt_addr=    0
+DEBUG AGU READ[         1]: cycle=       240 act_addr=0x0000 shift= -1 mask=00000000 wgt_addr=    1
+DEBUG AGU READ[         2]: cycle=       241 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    2
+DEBUG ACT DATA[         0]: cycle=       241 act_vec=0x0000000000000000 wgt_vec=0x0fe9fe2f15041009
+DEBUG PE[         0]: cycle=       241 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x0fe9fe2f15041009 AGU_state= 2 AGU_cnt_hk= 0 AGU_cnt_wk= 3
+DEBUG MAC[         0]: cycle=                 246 act=   0 wgt=   9 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 0 wk= 3
+DEBUG AGU READ[         3]: cycle=       242 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    3
+DEBUG ACT DATA[         1]: cycle=       242 act_vec=0x0000000000000000 wgt_vec=0x0af805291c041f07
+DEBUG PE[         1]: cycle=       242 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x0af805291c041f07 AGU_state= 2 AGU_cnt_hk= 0 AGU_cnt_wk= 4
+DEBUG MAC[         1]: cycle=                 247 act=   0 wgt=   7 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 0 wk= 4
+DEBUG AGU READ[         4]: cycle=       243 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    4
+DEBUG ACT DATA[         2]: cycle=       243 act_vec=0x0000000000000000 wgt_vec=0x0415f5fb0af9f4eb
+DEBUG PE[         2]: cycle=       243 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x0415f5fb0af9f4eb AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 0
+DEBUG MAC[         2]: cycle=                 248 act=   0 wgt= -21 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 0
+DEBUG AGU READ[         5]: cycle=       244 act_addr=0x0000 shift= -2 mask=00000000 wgt_addr=    5
+DEBUG ACT DATA[         3]: cycle=       244 act_vec=0x0000000000000000 wgt_vec=0x242cd9df03ebf5f3
+DEBUG PE[         3]: cycle=       244 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x242cd9df03ebf5f3 AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 1
+DEBUG MAC[         3]: cycle=                 249 act=   0 wgt= -13 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 1
+DEBUG AGU READ[         6]: cycle=       245 act_addr=0x0000 shift= -1 mask=00000000 wgt_addr=    6
+DEBUG ACT DATA[         4]: cycle=       245 act_vec=0x0000000000000000 wgt_vec=0xfc23dbd5ebfefa06
+DEBUG PE[         4]: cycle=       245 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xfc23dbd5ebfefa06 AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 2
+DEBUG MAC[         4]: cycle=                 250 act=   0 wgt=   6 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 2
+DEBUG AGU READ[         7]: cycle=       246 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    7
+DEBUG ACT DATA[         5]: cycle=       246 act_vec=0x0000000000000000 wgt_vec=0x15dd0cfdf6f6fa10
+DEBUG PE[         5]: cycle=       246 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x15dd0cfdf6f6fa10 AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 3
+DEBUG MAC[         5]: cycle=                 251 act=   0 wgt=  16 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 3
+DEBUG AGU READ[         8]: cycle=       247 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    8
+DEBUG ACT DATA[         6]: cycle=       247 act_vec=0x0000000000000000 wgt_vec=0x19ec1ce12f001bfa
+DEBUG PE[         6]: cycle=       247 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x19ec1ce12f001bfa AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 4
+DEBUG MAC[         6]: cycle=                 252 act=   0 wgt=  -6 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 4
+DEBUG AGU READ[         9]: cycle=       248 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    9
+DEBUG ACT DATA[         7]: cycle=       248 act_vec=0x0000000000000000 wgt_vec=0x18d1f1e11fe900fb
+DEBUG PE[         7]: cycle=       248 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x18d1f1e11fe900fb AGU_state= 2 AGU_cnt_hk= 2 AGU_cnt_wk= 0
+DEBUG MAC[         7]: cycle=                 253 act=   0 wgt=  -5 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 2 wk= 0
+DEBUG AGU READ[        10]: cycle=       249 act_addr=0x0000 shift= -2 mask=11111100 wgt_addr=   10
+DEBUG ACT DATA[         8]: cycle=       249 act_vec=0x0000000000000000 wgt_vec=0x16ef0ef3dddef9e5
+DEBUG PE[         8]: cycle=       249 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x16ef0ef3dddef9e5 AGU_state= 2 AGU_cnt_hk= 2 AGU_cnt_wk= 1
+DEBUG MAC[         8]: cycle=                 254 act=   0 wgt= -27 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 2 wk= 1
+DEBUG AGU READ[        11]: cycle=       250 act_addr=0x0000 shift= -1 mask=11111110 wgt_addr=   11
+DEBUG ACT DATA[         9]: cycle=       250 act_vec=0x0000000000000000 wgt_vec=0x23fe3f12eaf2f0f1
+DEBUG PE[         9]: cycle=       250 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x23fe3f12eaf2f0f1 AGU_state= 2 AGU_cnt_hk= 2 AGU_cnt_wk= 2
+DEBUG MAC[         9]: cycle=                 255 act=   0 wgt= -15 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 2 wk= 2
+DEBUG AGU READ[        12]: cycle=       251 act_addr=0x0000 shift=  0 mask=11111111 wgt_addr=   12
+DEBUG ACT DATA[        10]: cycle=       251 act_vec=0x0000000000000000 wgt_vec=0x23fc07cc0b0ee00c
+DEBUG PE[        10]: cycle=       251 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x23fc07cc0b0ee00c AGU_state= 2 AGU_cnt_hk= 2 AGU_cnt_wk= 3
+DEBUG MAC[        10]: cycle=                 256 act=   0 wgt=  12 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 2 wk= 3
+DEBUG AGU READ[        13]: cycle=       252 act_addr=0x0001 shift=  0 mask=11111111 wgt_addr=   13
+DEBUG ACT DATA[        11]: cycle=       252 act_vec=0x0000000000000000 wgt_vec=0x17e216ea2d14f703
+DEBUG PE[        11]: cycle=       252 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x17e216ea2d14f703 AGU_state= 2 AGU_cnt_hk= 2 AGU_cnt_wk= 4
+DEBUG MAC[        11]: cycle=                 257 act=   0 wgt=   3 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 2 wk= 4
+DEBUG AGU READ[        14]: cycle=       253 act_addr=0x0002 shift=  0 mask=11111111 wgt_addr=   14
+DEBUG ACT DATA[        12]: cycle=       253 act_vec=0x0000000000000000 wgt_vec=0x06c501ff0a151ee0
+DEBUG PE[        12]: cycle=       253 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x06c501ff0a151ee0 AGU_state= 2 AGU_cnt_hk= 3 AGU_cnt_wk= 0
+DEBUG MAC[        12]: cycle=                 258 act=   0 wgt= -32 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 3 wk= 0
+DEBUG AGU READ[        15]: cycle=       254 act_addr=0x0020 shift= -2 mask=11111100 wgt_addr=   15
+DEBUG ACT DATA[        13]: cycle=       254 act_vec=0x0000000000000000 wgt_vec=0xfdcc1c2ef11b0cdd
+DEBUG PE[        13]: cycle=       254 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xfdcc1c2ef11b0cdd AGU_state= 2 AGU_cnt_hk= 3 AGU_cnt_wk= 1
+DEBUG MAC[        13]: cycle=                 259 act=   0 wgt= -35 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 3 wk= 1
+DEBUG AGU READ[        16]: cycle=       255 act_addr=0x0020 shift= -1 mask=11111110 wgt_addr=   16
+DEBUG ACT DATA[        14]: cycle=       255 act_vec=0x0000000000000000 wgt_vec=0x26e12a35d52003df
+DEBUG PE[        14]: cycle=       255 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x26e12a35d52003df AGU_state= 2 AGU_cnt_hk= 3 AGU_cnt_wk= 2
+DEBUG MAC[        14]: cycle=                 260 act=   0 wgt= -33 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 3 wk= 2
+DEBUG AGU READ[        17]: cycle=       256 act_addr=0x0020 shift=  0 mask=11111111 wgt_addr=   17
+DEBUG ACT DATA[        15]: cycle=       256 act_vec=0x0000000000000000 wgt_vec=0x162114e213edf312
+DEBUG PE[        15]: cycle=       256 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x162114e213edf312 AGU_state= 2 AGU_cnt_hk= 3 AGU_cnt_wk= 3
+DEBUG MAC[        15]: cycle=                 261 act=   0 wgt=  18 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 3 wk= 3
+DEBUG AGU READ[        18]: cycle=       257 act_addr=0x0021 shift=  0 mask=11111111 wgt_addr=   18
+DEBUG ACT DATA[        16]: cycle=       257 act_vec=0x0000000000000000 wgt_vec=0x09112b0729fbf31d
+DEBUG PE[        16]: cycle=       257 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x09112b0729fbf31d AGU_state= 2 AGU_cnt_hk= 3 AGU_cnt_wk= 4
+DEBUG MAC[        16]: cycle=                 262 act=   0 wgt=  29 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 3 wk= 4
+DEBUG AGU READ[        19]: cycle=       258 act_addr=0x0022 shift=  0 mask=11111111 wgt_addr=   19
+DEBUG ACT DATA[        17]: cycle=       258 act_vec=0x0000000000000000 wgt_vec=0xde13192411190c19
+DEBUG PE[        17]: cycle=       258 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xde13192411190c19 AGU_state= 2 AGU_cnt_hk= 4 AGU_cnt_wk= 0
+DEBUG MAC[        17]: cycle=                 263 act=   0 wgt=  25 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 4 wk= 0
+DEBUG AGU READ[        20]: cycle=       259 act_addr=0x0040 shift= -2 mask=11111100 wgt_addr=   20
+DEBUG ACT DATA[        18]: cycle=       259 act_vec=0x0000000000000000 wgt_vec=0xf0f7fd17ea2cf703
+DEBUG PE[        18]: cycle=       259 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xf0f7fd17ea2cf703 AGU_state= 2 AGU_cnt_hk= 4 AGU_cnt_wk= 1
+DEBUG MAC[        18]: cycle=                 264 act=   0 wgt=   3 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 4 wk= 1
+DEBUG AGU READ[        21]: cycle=       260 act_addr=0x0040 shift= -1 mask=11111110 wgt_addr=   21
+DEBUG ACT DATA[        19]: cycle=       260 act_vec=0x0000000000000000 wgt_vec=0xe9f9e10ad329f300
+DEBUG PE[        19]: cycle=       260 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xe9f9e10ad329f300 AGU_state= 2 AGU_cnt_hk= 4 AGU_cnt_wk= 2
+DEBUG MAC[        19]: cycle=                 265 act=   0 wgt=   0 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 4 wk= 2
+DEBUG AGU READ[        22]: cycle=       261 act_addr=0x0040 shift=  0 mask=11111111 wgt_addr=   22
+DEBUG ACT DATA[        20]: cycle=       261 act_vec=0x0000000000000000 wgt_vec=0xe82bfd240ac7ee11
+DEBUG PE[        20]: cycle=       261 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xe82bfd240ac7ee11 AGU_state= 2 AGU_cnt_hk= 4 AGU_cnt_wk= 3
+DEBUG MAC[        20]: cycle=                 266 act=   0 wgt=  17 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 4 wk= 3
+DEBUG AGU READ[        23]: cycle=       262 act_addr=0x0041 shift=  0 mask=11111111 wgt_addr=   23
+DEBUG ACT DATA[        21]: cycle=       262 act_vec=0x0000000000000000 wgt_vec=0xc81d21132de0091f
+DEBUG PE[        21]: cycle=       262 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xc81d21132de0091f AGU_state= 2 AGU_cnt_hk= 4 AGU_cnt_wk= 4
+DEBUG MAC[        21]: cycle=                 267 act=   0 wgt=  31 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 4 wk= 4
+DEBUG AGU READ[        24]: cycle=       263 act_addr=0x0042 shift=  0 mask=11111111 wgt_addr=   24
+DEBUG ACT DATA[        22]: cycle=       263 act_vec=0x0000000000000000 wgt_vec=0xd930faf604150e12
+DEBUG PE[        22]: cycle=       263 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xd930faf604150e12 AGU_state= 3 AGU_cnt_hk= 0 AGU_cnt_wk= 0
+DEBUG MAC[        22]: cycle=                 268 act=   0 wgt=  18 product=     0 psum=     0->     0 (exp      0) state= 3 ci=   0 hk= 0 wk= 0
+DEBUG ACT DATA[        23]: cycle=       264 act_vec=0x0000000000000000 wgt_vec=0xd829e4e9da2bf831
+DEBUG PE[        23]: cycle=       264 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xd829e4e9da2bf831 AGU_state= 3 AGU_cnt_hk= 0 AGU_cnt_wk= 0
+DEBUG MAC[        23]: cycle=                 269 act=   0 wgt=  49 product=     0 psum=     0->     0 (exp      0) state= 3 ci=   0 hk= 0 wk= 0
+DEBUG ACT DATA[        24]: cycle=       265 act_vec=0x0000000000000000 wgt_vec=0xfb07d3cae228fa1d
+DEBUG PE[        24]: cycle=       265 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xfb07d3cae228fa1d AGU_state= 3 AGU_cnt_hk= 0 AGU_cnt_wk= 0
+DEBUG MAC[        24]: cycle=                 270 act=   0 wgt=  29 product=     0 psum=     0->     0 (exp      0) state= 3 ci=   0 hk= 0 wk= 0
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG DRAIN: cycle=       270 row_idx=0 addr=0x0000 data=0x0000000000000000
+DEBUG FIRST BRAM1 WRITE: addr=0x0000 word_addr=   0 data=0x0000000000000000
+DEBUG DRAIN: cycle=       271 row_idx=1 addr=0x0400 data=0x0000000000000000
+DEBUG DRAIN: cycle=       272 row_idx=2 addr=0x0800 data=0x0000000000000000
+DEBUG DRAIN: cycle=       273 row_idx=3 addr=0x0c00 data=0x0000000000000000
+DEBUG DRAIN: cycle=       274 row_idx=4 addr=0x1000 data=0x0000000000000000
+DEBUG DRAIN: cycle=       275 row_idx=5 addr=0x1400 data=0x0000000000000000
+DEBUG DRAIN: cycle=       276 row_idx=6 addr=0x1800 data=0x0000000000000000
+DEBUG DRAIN: cycle=       277 row_idx=7 addr=0x1c00 data=0x0000000000000000
+DEBUG AGU READ[        25]: cycle=       282 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    0
+DEBUG AGU READ[        26]: cycle=       283 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    1
+DEBUG AGU READ[        27]: cycle=       284 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    2
+DEBUG ACT DATA[        25]: cycle=       284 act_vec=0x0000000000000000 wgt_vec=0x0fe9fe2f15041009
+DEBUG PE[        25]: cycle=       284 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x0fe9fe2f15041009 AGU_state= 2 AGU_cnt_hk= 0 AGU_cnt_wk= 3
+DEBUG MAC[        25]: cycle=                 289 act=   0 wgt=   9 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 0 wk= 3
+DEBUG AGU READ[        28]: cycle=       285 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    3
+DEBUG ACT DATA[        26]: cycle=       285 act_vec=0x0000000000000000 wgt_vec=0x0af805291c041f07
+DEBUG PE[        26]: cycle=       285 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x0af805291c041f07 AGU_state= 2 AGU_cnt_hk= 0 AGU_cnt_wk= 4
+DEBUG MAC[        26]: cycle=                 290 act=   0 wgt=   7 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 0 wk= 4
+DEBUG AGU READ[        29]: cycle=       286 act_addr=0x0000 shift=  0 mask=00000000 wgt_addr=    4
+DEBUG ACT DATA[        27]: cycle=       286 act_vec=0x0000000000000000 wgt_vec=0x0415f5fb0af9f4eb
+DEBUG PE[        27]: cycle=       286 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x0415f5fb0af9f4eb AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 0
+DEBUG MAC[        27]: cycle=                 291 act=   0 wgt= -21 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 0
+DEBUG ACT DATA[        28]: cycle=       287 act_vec=0x0000000000000000 wgt_vec=0x242cd9df03ebf5f3
+DEBUG PE[        28]: cycle=       287 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0x242cd9df03ebf5f3 AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 1
+DEBUG MAC[        28]: cycle=                 292 act=   0 wgt= -13 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 1
+DEBUG ACT DATA[        29]: cycle=       288 act_vec=0x0000000000000000 wgt_vec=0xfc23dbd5ebfefa06
+DEBUG PE[        29]: cycle=       288 valid_in=1 psum[0][0]=        0 act_vec=0x0000000000000000 wgt_vec=0xfc23dbd5ebfefa06 AGU_state= 2 AGU_cnt_hk= 1 AGU_cnt_wk= 2
+DEBUG MAC[        29]: cycle=                 293 act=   0 wgt=   6 product=     0 psum=     0->     0 (exp      0) state= 2 ci=   0 hk= 1 wk= 2
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG DRAIN: cycle=       313 row_idx=0 addr=0x0008 data=0x0000000000000000
+DEBUG DRAIN: cycle=       314 row_idx=1 addr=0x0408 data=0x0000000000000000
+DEBUG DRAIN: cycle=       315 row_idx=2 addr=0x0808 data=0x0000000000000000
+DEBUG DRAIN: cycle=       316 row_idx=3 addr=0x0c08 data=0x0000000000000000
+DEBUG DRAIN: cycle=       317 row_idx=4 addr=0x1008 data=0x0000000000000000
+DEBUG DRAIN: cycle=       318 row_idx=5 addr=0x1408 data=0x0000000000000000
+DEBUG DRAIN: cycle=       319 row_idx=6 addr=0x1808 data=0x0000000000000000
+DEBUG DRAIN: cycle=       320 row_idx=7 addr=0x1c08 data=0x0000000000000000
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG DRAIN: cycle=       356 row_idx=0 addr=0x0010 data=0x0000000000000000
+DEBUG DRAIN: cycle=       357 row_idx=1 addr=0x0410 data=0x0000000000000000
+DEBUG DRAIN: cycle=       358 row_idx=2 addr=0x0810 data=0x0000000000000000
+DEBUG DRAIN: cycle=       359 row_idx=3 addr=0x0c10 data=0x0000000000000000
+DEBUG DRAIN: cycle=       360 row_idx=4 addr=0x1010 data=0x0000000000000000
+DEBUG DRAIN: cycle=       361 row_idx=5 addr=0x1410 data=0x0000000000000000
+DEBUG DRAIN: cycle=       362 row_idx=6 addr=0x1810 data=0x0000000000000000
+DEBUG DRAIN: cycle=       363 row_idx=7 addr=0x1c10 data=0x0000000000000000
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG DRAIN: cycle=       399 row_idx=0 addr=0x0018 data=0x0000000000000000
+DEBUG DRAIN: cycle=       400 row_idx=1 addr=0x0418 data=0x0000000000000000
+DEBUG DRAIN: cycle=       401 row_idx=2 addr=0x0818 data=0x0000000000000000
+DEBUG DRAIN: cycle=       402 row_idx=3 addr=0x0c18 data=0x0000000000000000
+DEBUG DRAIN: cycle=       403 row_idx=4 addr=0x1018 data=0x0000000000000000
+DEBUG DRAIN: cycle=       404 row_idx=5 addr=0x1418 data=0x0000000000000000
+DEBUG DRAIN: cycle=       405 row_idx=6 addr=0x1818 data=0x0000000000000000
+DEBUG DRAIN: cycle=       406 row_idx=7 addr=0x1c18 data=0x0000000000000000
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG DRAIN: cycle=       442 row_idx=0 addr=0x2000 data=0x0000000000000000
+DEBUG DRAIN: cycle=       443 row_idx=1 addr=0x2400 data=0x0000000000000000
+DEBUG DRAIN: cycle=       444 row_idx=2 addr=0x2800 data=0x0000000000000000
+DEBUG DRAIN: cycle=       445 row_idx=3 addr=0x2c00 data=0x0000000000000000
+DEBUG DRAIN: cycle=       446 row_idx=4 addr=0x3000 data=0x0000000000000000
+DEBUG DRAIN: cycle=       447 row_idx=5 addr=0x3400 data=0x0000000000000000
+DEBUG DRAIN: cycle=       448 row_idx=6 addr=0x3800 data=0x0000000000000000
+DEBUG DRAIN: cycle=       449 row_idx=7 addr=0x3c00 data=0x0000000000000000
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG DRAIN: cycle=       485 row_idx=0 addr=0x2008 data=0x0000000000000000
+DEBUG DRAIN: cycle=       486 row_idx=1 addr=0x2408 data=0x0000000000000000
+DEBUG DRAIN: cycle=       487 row_idx=2 addr=0x2808 data=0x0000000000000000
+DEBUG DRAIN: cycle=       488 row_idx=3 addr=0x2c08 data=0x0000000000000000
+DEBUG DRAIN: cycle=       489 row_idx=4 addr=0x3008 data=0x0000000000000000
+DEBUG DRAIN: cycle=       490 row_idx=5 addr=0x3408 data=0x0000000000000000
+DEBUG DRAIN: cycle=       491 row_idx=6 addr=0x3808 data=0x0000000000000000
+DEBUG DRAIN: cycle=       492 row_idx=7 addr=0x3c08 data=0x0000000000000000
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     4270 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     2932 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -10776 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3000 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    10376 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     5523 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -23967 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     8777 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    15242 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     8275 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -32584 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    13404 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    26024 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     9419 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -31156 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    15882 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      435 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    28106 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -465 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    13097 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      450 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -14307 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -150 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    16202 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1131 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    16534 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -1644 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    10298 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1770 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    14187 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -345 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    13838 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      752 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     2057 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2464 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     6017 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3150 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    36874 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      -58 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     4768 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1011 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -4189 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -3884 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      155 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     5605 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    47461 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -108 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -452 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -667 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -1201 (expected 7055)
+  Progress:      10000 cycles, state= 2
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -3985 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -1594 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     7427 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    33797 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      184 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -684 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -3021 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2546 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2095 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2190 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     6475 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    15453 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      652 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     9221 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2466 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -5565 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -730 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -3442 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     5553 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    13127 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -276 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    11757 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -420 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -8140 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -1481 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -1143 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     4557 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    19950 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -1673 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     9125 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      123 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2891 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      153 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -781 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3243 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=       27 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1759 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    26769 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -495 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -878 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      673 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      -81 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=       54 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1811 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1233 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -171 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     5293 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      315 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      306 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    22590 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -3951 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -180 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -7929 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -351 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3005 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3973 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3685 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1864 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    11849 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -11715 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -6352 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1253 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      705 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     8616 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=      867 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     5403 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3298 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -20963 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2094 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     6938 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    13742 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     8999 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -25483 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    12283 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    16011 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    11778 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=   -19674 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    14390 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    15827 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    11453 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -8094 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    10954 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    10401 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    10125 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     6165 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     5228 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -810 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     7877 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    19259 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     1170 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -7329 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     4823 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    19904 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     -651 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -3834 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     2065 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+  Progress:      20000 cycles, state= 3
+DEBUG FINAL PE[0][0] before latch: psum=    11055 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -5728 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2789 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -1929 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=     3357 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=    -2803 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+DEBUG FINAL PE[0][0] before latch: psum=        0 (expected 7055)
+Computation done at time            222585000!
+========================================
+Verifying output...
+MATCH   : out[          0][          0][          0] =    0 (0x00)
+MATCH   : out[          0][          0][          1] =    0 (0x00)
+MATCH   : out[          0][          0][          2] =    0 (0x00)
+MATCH   : out[          0][          0][          3] =    0 (0x00)
+MATCH   : out[          0][          0][          4] =    0 (0x00)
+MATCH   : out[          0][          0][          5] =    0 (0x00)
+MATCH   : out[          0][          0][          6] =    0 (0x00)
+MATCH   : out[          0][          0][          7] =    0 (0x00)
+MATCH   : out[          0][          0][          8] =    0 (0x00)
+MATCH   : out[          0][          0][          9] =    0 (0x00)
+========================================
+Test Complete!
+  Total checks:       32768
+  Matches:            32768
+  Mismatches:             0
+========================================
+*** TEST PASSED ***
+$finish called at time : 304696 ns : File "D:/TH/2026au/FPGA/DPU_v2/tb/tb_dpu_simple.v" Line 273

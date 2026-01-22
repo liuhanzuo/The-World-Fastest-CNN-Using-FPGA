@@ -1,0 +1,16 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/src/act_buffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module act_buffer
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/src/agu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module agu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/tb/debug_pe_mac.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_pe_mac
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/src/dpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/src/drainer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drainer
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/src/pe_array.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/src/wgt_buffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wgt_buffer
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TH/2026au/FPGA/DPU_v2/tb/tb_dpu_simple.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_dpu_simple
