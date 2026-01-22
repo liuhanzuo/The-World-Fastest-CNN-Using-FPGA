@@ -1,0 +1,1 @@
+-incr -debug "typical" -relax -s "cnn_sim" -top "tb_data_load_test" -log "xelab.log" 

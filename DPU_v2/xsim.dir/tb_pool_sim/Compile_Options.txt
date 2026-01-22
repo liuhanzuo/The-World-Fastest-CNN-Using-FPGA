@@ -1,0 +1,1 @@
+-debug "typical" "work.tb_pooling_layer" -s "tb_pool_sim" 

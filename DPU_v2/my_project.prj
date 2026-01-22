@@ -1,0 +1,13 @@
+sv work src/agu.v
+sv work src/agu_pooling.v
+sv work src/cnn_top.v
+sv work src/dpu_top.v
+sv work src/drainer.v
+sv work src/drainer_pooling.v
+sv work src/fc_layer_ext.v
+sv work src/pe_array.v
+sv work src/pe_pooling.v
+sv work src/pool_unit_pe.v
+sv work src/wgt_buffer.v
+sv work src/act_buffer_if.v
+sv work tb/tb_cnn_pingpong.v

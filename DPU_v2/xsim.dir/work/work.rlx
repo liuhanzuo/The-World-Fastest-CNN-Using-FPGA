@@ -1,0 +1,17 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+F:/FPGA/DPU_v2/src/act_buffer_if.v,1768900834,systemVerilog,,F:/FPGA/DPU_v2/tb/tb_cnn_pingpong.v,,act_buffer_if,,,,,,,,
+F:/FPGA/DPU_v2/src/agu.v,1768896966,systemVerilog,,F:/FPGA/DPU_v2/src/agu_pooling.v,,agu,,,,,,,,
+F:/FPGA/DPU_v2/src/agu_pooling.v,1768897042,systemVerilog,,F:/FPGA/DPU_v2/src/cnn_top.v,,agu_pooling,,,,,,,,
+F:/FPGA/DPU_v2/src/cnn_top.v,1769057413,systemVerilog,,F:/FPGA/DPU_v2/src/dpu_top.v,,cnn_top,,,,,,,,
+F:/FPGA/DPU_v2/src/dpu_top.v,1768899166,systemVerilog,,F:/FPGA/DPU_v2/src/drainer.v,,dpu_top,,,,,,,,
+F:/FPGA/DPU_v2/src/drainer.v,1768897008,systemVerilog,,F:/FPGA/DPU_v2/src/drainer_pooling.v,,drainer,,,,,,,,
+F:/FPGA/DPU_v2/src/drainer_pooling.v,1768897064,systemVerilog,,F:/FPGA/DPU_v2/src/fc_layer_ext.v,,drainer_pooling,,,,,,,,
+F:/FPGA/DPU_v2/src/fc_layer_ext.v,1768899290,systemVerilog,,F:/FPGA/DPU_v2/src/pe_array.v,,fc_layer_ext,,,,,,,,
+F:/FPGA/DPU_v2/src/pe_array.v,1768896998,systemVerilog,,F:/FPGA/DPU_v2/src/pe_pooling.v,,pe_array,,,,,,,,
+F:/FPGA/DPU_v2/src/pe_pooling.v,1768897054,systemVerilog,,F:/FPGA/DPU_v2/src/pool_unit_pe.v,,pe_pooling,,,,,,,,
+F:/FPGA/DPU_v2/src/pool_unit_pe.v,1769053580,systemVerilog,,F:/FPGA/DPU_v2/src/wgt_buffer.v,,pool_unit_pe,,,,,,,,
+F:/FPGA/DPU_v2/src/wgt_buffer.v,1768896992,systemVerilog,,F:/FPGA/DPU_v2/src/act_buffer_if.v,,wgt_buffer,,,,,,,,
+F:/FPGA/DPU_v2/tb/tb_cnn_pingpong.v,1769052954,systemVerilog,,,,tb_cnn_pingpong,,,,,,,,

@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../src/act_buffer.v" \
+"../../../../../src/agu.v" \
+"../../../../../src/dpu_top.v" \
+"../../../../../src/drainer.v" \
+"../../../../../src/pe_array.v" \
+"../../../../../src/wgt_buffer.v" \
+"../../../../../tb/tb_dpu_simple.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

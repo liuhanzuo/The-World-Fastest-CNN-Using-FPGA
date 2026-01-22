@@ -1,0 +1,1 @@
+-debug "typical" "work.tb_cnn_e2e" -s "tb_e2e_sim" 

@@ -1,0 +1,120 @@
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/tb_cnn_pingpong_sim/xsim_script.tcl
+# xsim {tb_cnn_pingpong_sim} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+================================================================
+  Ping-Pong BRAM CNN Hardware Simulation (im1)
+================================================================
+
+Architecture: Global Shared Ping-Pong BRAM
+  - Bank0 and Bank1 are shared by all layers
+  - Each layer reads from one bank, writes to the other
+  - No layer has its own internal activation BRAM
+
+Ping-Pong Schedule:
+  Conv1:   Read Bank0 -> Write Bank1
+  Pool1:   Read Bank1 -> Write Bank0
+  Conv2:   Read Bank0 -> Write Bank1
+  Conv3:   Read Bank1 -> Write Bank0
+  Conv4:   Read Bank0 -> Write Bank1
+  AvgPool: Read Bank1 -> Write Bank0
+  FC:      Read Bank0 -> Output
+================================================================
+
+[Loading test data...]
+
+--- Loading input image to Bank0 ---
+  Input image loaded: 1x32x32 = 1024 bytes
+
+--- Loading all weights ---
+  Conv1 weights: 32x1x5x5 = 800 bytes
+  Conv2 weights: 64x32x3x3 = 18432 bytes
+  Conv3 weights: 64x64x3x3 = 36864 bytes
+  Conv4 weights: 128x64x3x3 = 73728 bytes
+  FC weights: 10x128 = 1280 bytes
+
+================================================================
+  Starting CNN Inference (all layers use shared BRAM)
+================================================================
+
+--- [Layer 1] Conv1 completed @ cycle 40559 (took 22019 cycles) ---
+  Output in Bank1: Match 32768/32768 (100.0%)
+  [PASSED] Conv1
+
+--- [Layer 2] Pool1 completed @ cycle 54930 (took 14371 cycles) ---
+  Output in Bank0: Match 8192/8192 (100.0%)
+  [PASSED] Pool1
+
+--- [Layer 3] Conv2 completed @ cycle 133269 (took 78339 cycles) ---
+  Output in Bank1: Match 16384/16384 (100.0%)
+  [PASSED] Conv2
+
+--- [Layer 4] Conv3 completed @ cycle 171288 (took 38019 cycles) ---
+  Output in Bank0: Match 4096/4096 (100.0%)
+  [PASSED] Conv3
+
+--- [Layer 5] Conv4 completed @ cycle 209307 (took 38019 cycles) ---
+  Output in Bank1: Match 2048/2048 (100.0%)
+  [PASSED] Conv4
+
+--- [Layer 6] AvgPool completed @ cycle 210462 (took 1155 cycles) ---
+  Output in Bank0: Match 128/128 (100.0%)
+  [PASSED] AvgPool
+
+--- [Layer 7] FC completed @ cycle 215616 (took 5154 cycles) ---
+  Predicted class: 7 (score=127)
+  Expected class:  7 (score=127)
+  [PASSED] FC - Prediction CORRECT!
+
+================================================================
+                    TEST SUMMARY
+================================================================
+  Architecture: Ping-Pong Shared BRAM (2 Banks)
+  Total BRAM: 2 x 32KB = 64KB (shared by all layers)
+
+  Layer Results:
+    1. Conv1:   PASSED
+    2. Pool1:   PASSED
+    3. Conv2:   PASSED
+    4. Conv3:   PASSED
+    5. Conv4:   @AA@ED
+    6. AvgPool: @AA@ED
+    7. FC:      @AA@ED
+
+  !!! SOME LAYERS FAILED !!!
+================================================================
+
+================================================================
+                    TIMING REPORT
+================================================================
+  Clock Frequency: 100 MHz (10 ns period)
+
+  Per-Layer Cycle Count:
+    +-----------+------------+------------+-----------+
+    | Layer     | Cycles     | Time (us)  | Time (ms) |
+    +-----------+------------+------------+-----------+
+    | Conv1     |      22019 |     220.19 |    0.2202 |
+    | Pool1     |      14371 |     143.71 |    0.1437 |
+    | Conv2     |      78339 |     783.39 |    0.7834 |
+    | Conv3     |      38019 |     380.19 |    0.3802 |
+    | Conv4     |      38019 |     380.19 |    0.3802 |
+    | AvgPool   |       1155 |      11.55 |    0.0116 |
+    | FC        |       5154 |      51.54 |    0.0515 |
+    +-----------+------------+------------+-----------+
+    | TOTAL     |     197076 |    1970.76 |    1.9708 |
+    +-----------+------------+------------+-----------+
+
+  Performance Metrics:
+    - Total Inference Time: 1.9708 ms
+    - Throughput: 507.42 images/second @ 100MHz
+    - Latency: 197076 clock cycles
+================================================================
+$finish called at time : 2156455 ns : File "F:/FPGA/DPU_v2/tb/tb_cnn_pingpong.v" Line 446
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Jan 22 12:54:35 2026...
